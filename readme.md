@@ -6,9 +6,11 @@ python3 training.py
 ```
 #### Predict
 ```
-from predict import predict, classify
+from predict import response, classify
 
-predict('text')
+>>> response('is your shop open today?')
+We're open every day from 9am-9pm
 
-classify('text')
+>>> classify('is your shop open today?')
+[('opentoday', 0.93861651)]
 ```
