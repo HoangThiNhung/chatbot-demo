@@ -18,14 +18,14 @@ import random
 
 
 import pickle
-data = pickle.load( open( "training_data", "rb" ) )
+data = pickle.load( open( "models/training_data", "rb" ) )
 words = data['words']
 classes = data['classes']
 train_x = data['train_x']
 train_y = data['train_y']
 
 import json
-with open('intents.json') as json_data:
+with open('data/intents.json') as json_data:
     intents = json.load(json_data)
 
 
@@ -75,7 +75,7 @@ bow('I want to special food', words)
 
 
 # load model
-model.load('./model.tflearn')
+model.load('./models/model.tflearn')
 
 
 # In[7]:

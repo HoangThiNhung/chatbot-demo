@@ -20,7 +20,7 @@ import random
 
 
 import json
-with open('intents.json') as json_data:
+with open('data/intents.json') as json_data:
     intents = json.load(json_data)
 
 
@@ -137,12 +137,12 @@ net = tflearn.regression(net, optimizer='adam', loss='categorical_crossentropy')
 model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 
 model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
-model.save('model.tflearn')
+model.save('models/model.tflearn')
 
 
 # In[8]:
 
 
 import pickle
-pickle.dump( {'words':words, 'classes':classes, 'train_x':train_x, 'train_y':train_y}, open( "training_data", "wb" ) )
+pickle.dump( {'words':words, 'classes':classes, 'train_x':train_x, 'train_y':train_y}, open( "models/training_data", "wb" ) )
 
